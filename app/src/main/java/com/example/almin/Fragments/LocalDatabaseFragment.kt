@@ -17,6 +17,7 @@ class LocalDatabaseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding= FragmentLocalDatabaseBinding.inflate(inflater,container,false)
+
         viewModelLocalDBFragment.getShows(this)
         return binding.root
     }

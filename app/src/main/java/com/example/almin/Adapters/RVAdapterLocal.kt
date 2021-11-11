@@ -3,6 +3,7 @@ package com.example.almin.Adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -46,6 +47,9 @@ class RVAdapterLocal(val listShow:List<Shows>,val fragment: LocalDatabaseFragmen
                 val list= ShowDatabase.getInstance(fragment.requireContext()).ShowDao().getAll()
                 fragment.binding.recyclerViewLocal.adapter= RVAdapterLocal(list,fragment)
                 fragment.binding.recyclerViewLocal.layoutManager= LinearLayoutManager(fragment.requireContext())
+            }
+            binding.linearLayout.setOnClickListener {
+                Toast.makeText(fragment.requireContext(), "${listShow[position].summary}", Toast.LENGTH_SHORT).show()
             }
 
         }
