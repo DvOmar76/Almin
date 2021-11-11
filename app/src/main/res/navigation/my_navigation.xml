@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.almin.Fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_apiFragment"
+            app:destination="@id/apiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_localDatabaseFragment"
+            app:destination="@id/localDatabaseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/apiFragment"
+        android:name="com.example.almin.Fragments.ApiFragment"
+        android:label="fragment_api"
+        tools:layout="@layout/fragment_api" />
+    <fragment
+        android:id="@+id/localDatabaseFragment"
+        android:name="com.example.almin.Fragments.LocalDatabaseFragment"
+        android:label="fragment_local_database"
+        tools:layout="@layout/fragment_local_database" />
+</navigation>
